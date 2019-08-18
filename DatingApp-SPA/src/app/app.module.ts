@@ -9,6 +9,7 @@ import { NavComponent } from './components/layouts/nav/nav.component';
 import { AuthService } from './_services/auth.service';
 import { HomeComponent } from './components/layouts/home/home.component';
 import { RegisterComponent } from './components/auth/register/register.component';
+import { ErrorIntercepterProvide } from './_services/error.interceptor';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { RegisterComponent } from './components/auth/register/register.component
     FormsModule
   ],
   providers: [
-    AuthService
+    AuthService,
+    ErrorIntercepterProvide
   ],
   bootstrap: [AppComponent]
 })
