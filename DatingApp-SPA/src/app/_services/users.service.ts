@@ -1,0 +1,12 @@
+import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class UsersService {
+  baseUrl = environment.apiUrl;
+
+  constructor() { }
+}
+// 81 - 3:18
