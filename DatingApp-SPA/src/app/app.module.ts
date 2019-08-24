@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { BsDropdownModule } from 'ngx-bootstrap';
+import { BsDropdownModule, TabsModule } from 'ngx-bootstrap';
+import { JwtModule } from '@auth0/angular-jwt';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,10 +13,17 @@ import { HomeComponent } from './components/layouts/home/home.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { ErrorIntercepterProvide } from './_services/error.interceptor';
 import { AlertifyService } from './_services/alertify.service';
-import { MemberListComponent } from './components/main/member-list/member-list.component';
+import { MemberListComponent } from './components/main/members/member-list/member-list.component';
 import { ListComponent } from './components/main/list/list.component';
 import { MessagesComponent } from './components/main/messages/messages.component';
 import { AuthGuard } from './_guards/auth.guard';
+import { UsersService } from './_services/users.service';
+import { MemberCardComponent } from './components/main/members/member-card/member-card.component';
+import { DetailMemberComponent } from './components/main/members/detail-member/detail-member.component';
+
+export function tokenGetter() {
+  return localStorage.getItem('token');
+}
 
 @NgModule({
   declarations: [
@@ -25,7 +33,9 @@ import { AuthGuard } from './_guards/auth.guard';
     RegisterComponent,
     MemberListComponent,
     ListComponent,
-    MessagesComponent
+    MessagesComponent,
+    MemberCardComponent,
+    DetailMemberComponent
   ],
   imports: [
     BrowserModule,
@@ -33,12 +43,21 @@ import { AuthGuard } from './_guards/auth.guard';
     HttpClientModule,
     FormsModule,
     BsDropdownModule.forRoot(),
+    TabsModule.forRoot(),
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        whitelistedDomains: ['localhost:5000'],
+        blacklistedRoutes: ['localhost:5000/api/auth']
+      }
+    })
   ],
   providers: [
     AuthService,
     ErrorIntercepterProvide,
     AlertifyService,
-    AuthGuard
+    AuthGuard,
+    UsersService
   ],
   bootstrap: [AppComponent]
 })
