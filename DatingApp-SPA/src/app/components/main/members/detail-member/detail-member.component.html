@@ -3,7 +3,7 @@
     <div class="col-sm-4">
         <h1>{{user.username}}'s Profile</h1>
       <div class="card">
-        <img class="card-img-top img-thumbnail" src="{{user?.photoUrl}}" alt="{{user?.knowAs}}">
+        <img class="card-img-top img-thumbnail" src="{{user?.photoUrl || '../../../assets/images/user.png'}}" alt="{{user?.knowAs}}">
         <div class="card-body">
           <div>
             <strong>location:</strong>
