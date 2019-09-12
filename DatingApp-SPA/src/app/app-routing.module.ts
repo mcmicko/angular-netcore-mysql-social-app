@@ -13,6 +13,7 @@ import { EditMemberComponent } from './components/main/members/edit-member/edit-
 import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { ListsResolver } from './_resolvers/lists.resolver';
+import { MessagesResolver } from './_resolvers/message.resolver';
 
 
 const routes: Routes = [
@@ -23,7 +24,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       { path: 'members', component: MemberListComponent, resolve: {users: MemberListResolver} },
-      { path: 'messages', component: MessagesComponent },
+      { path: 'messages', component: MessagesComponent, resolve: {messages: MessagesResolver} },
       { path: 'lists', component: ListComponent, resolve: {users: ListsResolver} },
       { path: 'members/:id', component: DetailMemberComponent, resolve: {user: MemberDetailResolver} },
       { path: 'member/edit', component: EditMemberComponent,
