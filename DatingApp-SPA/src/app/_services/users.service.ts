@@ -104,5 +104,9 @@ export class UsersService {
     return this.http.get<Message[]>(this.baseUrl + 'users/' + id + '/messages/thread/' + recipientId);
   }
 
+  senMessage(id: number, message: Message) {
+    return this.http.post(this.baseUrl + 'users/' + id + '/messages',  message);
+  }
+
 }
 
