@@ -17,9 +17,10 @@ export class EditMemberComponent implements OnInit {
   @ViewChild('editForm', {static: true}) editForm: NgForm;
   @HostListener('window:beforeunload', ['$event'])
   unloadNotification($event: any) {
-    $event.returnValue = true;
+    if (this.editForm.dirty) {
+      $event.returnValue = true;
+    }
   }
-
   constructor(
     private route: ActivatedRoute,
     private alertify: AlertifyService,

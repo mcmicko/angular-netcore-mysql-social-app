@@ -49,10 +49,10 @@ export class MemberMessagesComponent implements OnInit {
     this.userService.senMessage(this.authService.decodedToken.nameid, this.newMessage)
       .subscribe((message: Message) => {
         this.messages.unshift(message);
-        this.newMessage = '';
-      }, error => {
-        this.alertify.error(error);
-      });
+        this.newMessage.content = '';
+    }, error => {
+      this.alertify.error(error);
+    });
   }
 
 }
