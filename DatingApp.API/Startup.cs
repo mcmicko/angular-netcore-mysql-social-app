@@ -46,7 +46,7 @@ namespace DatingApp.API
         {
             services.AddDbContext<DataContext>(x => {
                 x.UseLazyLoadingProxies();
-                x.UseMySql(Configuration.GetConnectionString("DefaultConnection"));
+                x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
 
             ConfigureServices(services);
@@ -101,9 +101,10 @@ namespace DatingApp.API
                     });
                 });
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                // app.UseHsts();
+                app.UseHsts();
             }
 
+            // app.UseDeveloperExceptionPage();
             // app.UseHttpsRedirection();
             // seeder.SeedUsers();
             app.UseCors(x => x.WithOrigins("http://localhost:4200").AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());

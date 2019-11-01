@@ -1,19 +1,32 @@
-<div class="container mt-5">
-  <div *ngIf="!registerMode" style="text-align: center">
-    <h1>find your match</h1>
-    <p class="lead">Come on in to view your matches... all you need to to is sign up!</p>
-    <div class="text-center">
-      <button class="btn btn-primary mr-2 btn-lg" (click)="registerToggle()">Register</button>
-      <button class="btn btn-info btn-lg">Learn more</button>
-    </div>
-  </div>
-
-  <div *ngIf="registerMode" class="container">
+<div id="cover-image">
+</div>
+<div *ngIf="learnMode" id="learnBar">
     <div class="row justify-content-center">
-      <div class="col-4">
-        <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
+      <div>
+        <h3>developer: milos mandic</h3>
+        <p style="font-size: 1rem;">A practical example of how to build an application with ASP.NET Core WebAPI (v2.2) and Angular (v8)</p>
+        <p></p>
       </div>
     </div>
   </div>
-</div>
+ <div class="container mt-5" style="width: 55%; padding: 3rem; border-radius: 5px; position: absolute; right: 0rem;">
+    <div *ngIf="!registerMode" style="text-align: center"
+      >
+      <h1 style="color: white;">find your match</h1>
+      <p class="lead text-light">Come on in to view your matches... all you need to to is sign up!</p>
+      <div class="text-center">
+        <button class="btn btn-primary mr-2 btn-lg" (click)="registerToggle()">Register</button>
+        <button class="btn btn-info btn-lg btn-danger" (click)="learnToggle()">Learn more</button>
+      </div>
+    </div>
+
+    <div *ngIf="registerMode" class="container">
+      <div class="row justify-content-center">
+        <div class="col-4">
+          <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
+        </div>
+      </div>
+    </div>
+
+  </div>
 

@@ -1,0 +1,25 @@
+#cover-image {
+  background: url("../../../../assets/images/marvel_superheroes.jpg");
+  width:100%;
+  height: 100vh;
+  position: fixed;
+  clip-path: polygon(0 0, 40% 0, 55% 100%, 0% 100%);
+}
+#cover-image:before {
+  content: '';
+  position: absolute;
+  background: rgba(255, 0, 0, 0.571);
+  width: 100%;
+  height: 100vh;
+  clip-path: polygon(0 0, 40% 0, 55% 100%, 0% 100%);
+  z-index: 1;
+}
+#learnBar {
+  position: absolute;
+  left: 0;
+  top: 40%;
+  color: white;
+  background: rgba(0, 0, 0, 0.598);
+  padding: 2rem;
+  width: 42%;
+}
