@@ -1,12 +1,13 @@
 #cover-image {
-  background: url("../../../../assets/images/marvel_superheroes.jpg");
-  width:100%;
+  background: url("../../../../assets/images/cheers-AdobeStock_293365722.jpg");
+  background-position: -700px;
+  width: 100%;
   height: 100vh;
   position: fixed;
   clip-path: polygon(0 0, 40% 0, 55% 100%, 0% 100%);
 }
 #cover-image:before {
-  content: '';
+  content: "";
   position: absolute;
   background: rgba(255, 0, 0, 0.571);
   width: 100%;

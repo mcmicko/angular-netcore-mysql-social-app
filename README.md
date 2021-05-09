@@ -1,6 +1,6 @@
 # Angular .NET Core MySQL & Entity Framework - Social Application
 
-<h3>Build an application with ASP.NET Core API 3.1 and Angular 9 from start to finish</h3>
+<h3>Build an application with ASP.NET Core API 2.2 and Angular 8 from start to finish</h3>
 
 - Setting up the developer environment
 
@@ -24,21 +24,16 @@
 
 - Adding a Private Messaging system to the app
 
-- Publishing the application to Heroku free of charge
-
 - Using SignalR for real time presence and live messaging between users
 
-Registration field:
-<img alt="Registration endpoint" src="DatingApp Register.png" />
+Each user can register:
+<img alt="Registration endpoint" src="./screenshots/registar.gif" />
 
-Community of members:
-<img alt="DatingApp Members" src="DatingApp Members.png" />
+Every user can edit profile and upload profile picture:
+<img alt="DatingApp edit profile" src="./screenshots/edit_profile.gif" />
 
-Profile edit:
-<img alt="DatingApp Member Edit" src="DatingApp Member Edit.png" />
+Members can communicate with each other:
+<img alt="DatingApp chat" src="./screenshots/chat.gif" />
 
-Upload profile image:
-<img alt="DatingApp Image Upload" src="DatingApp Image Upload.png" />
-
-Chet with friend:
-<img alt="DatingApp Messages System" src="DatingApp Messages System.png" />
+On community memebers you can filter by age and gender & like a particular person:
+<img alt="DatingApp filter and like" src="./screenshots/like-and-filter.gif" />
